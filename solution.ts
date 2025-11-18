@@ -28,9 +28,6 @@ class Person {
   }
 }
 
-const person1 = new Person("John Doe", 30);
-// console.log(person1.getDetails());
-
 type Item = {
   title: string;
   rating: number;
@@ -39,14 +36,6 @@ type Item = {
 const filterByRating = <T extends Item>(items: T[]): T[] => {
   return items.filter((item) => item.rating >= 4 && item.rating <= 5);
 };
-
-// console.log(
-//   filterByRating([
-//     { title: "Book A", rating: 4.5 },
-//     { title: "Book B", rating: 3.2 },
-//     { title: "Book C", rating: 6.0 },
-//   ])
-// );
 
 type User = {
   id: number;
@@ -57,14 +46,6 @@ type User = {
 
 const filterActiveUsers = <T extends User>(users: T[]): T[] =>
   users.filter((user) => user.isActive);
-
-// const users = [
-//   { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
-//   { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
-//   { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
-// ];
-
-// console.log(filterActiveUsers(users));
 
 interface Book {
   title: string;
@@ -85,15 +66,6 @@ const printBookDetails = ({
     }`
   );
 };
-
-// const anotherBook: Book = {
-//   title: "1984",
-//   author: "George Orwell",
-//   publishedYear: 1949,
-//   isAvailable: false,
-// };
-
-// printBookDetails(anotherBook);
 
 const getUniqueValues = (
   array1: (string | number)[],
@@ -135,10 +107,6 @@ const getUniqueValues = (
   return uniqueArray;
 };
 
-// const array5 = [1, 2, 2, 3];
-// const array6 = [3, 4, 4, 5];
-// console.log(getUniqueValues(array5, array6));
-
 interface Product {
   name: string;
   price: number;
@@ -161,12 +129,4 @@ const calculateTotalPrice = (products: Product[]): number => {
     return total + totalCost;
   }, 0);
 };
-
-// const products = [
-//   { name: "Pen", price: 10, quantity: 2 },
-//   { name: "Notebook", price: 25, quantity: 3, discount: 10 },
-//   { name: "Bag", price: 50, quantity: 1, discount: 20 },
-// ];
-
-// console.log(calculateTotalPrice(products));
 
